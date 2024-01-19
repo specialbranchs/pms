@@ -65,7 +65,7 @@ class AppointMentApiView(APIView):
            Q( created__year=dateObj.year,
             created__month=dateObj.month,
             created__day=dateObj.day)
-            ).order_by('appoint_time')
+            ).order_by('status','designation_id','appoint_time')
         serializers=AppointMentSerializer(appointments,many=True)
         return Response(serializers.data)
     

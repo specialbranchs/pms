@@ -116,7 +116,14 @@ const Register = (props: any) => {
                 <Typography variant="h4" gutterBottom sx={{
                   color: colorConfigs.sidebar.bg,
                   letterSpacing: 2,
-                  fontSize: '25px',
+                  fontSize: {
+                    xs: 14,
+                    sm: 18,
+                    md: 24,
+                    lg: 28,
+                    xl: 35,
+                  },
+
                   fontFamily: ['Raleway', 'sans-serif'].join(",")
                 }}>
                   SignUP with BP Number
@@ -264,7 +271,7 @@ const Register = (props: any) => {
                 <Link href="#" variant="body2" sx={{ marginLeft: 2 }}>
 
                   <NavLink to={'/'}>
-                    SIGNIN
+                    Sign In
                   </NavLink>
                 </Link>
               </Toolbar>

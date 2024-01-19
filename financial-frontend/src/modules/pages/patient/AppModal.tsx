@@ -28,6 +28,10 @@ const AppModal = ({ user, open, handleClose, setapp }: any) => {
             alert("select your reason")
             return
         }
+        if (location === 0) {
+            alert("select your Location")
+            return
+        }
         if (!user?.id)
             return
         const date = new Date().toISOString().slice(0, 10)

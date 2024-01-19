@@ -1,4 +1,14 @@
-import { Container, Typography, TextField, Grid, Link, Box, Avatar, Stack, Toolbar } from "@mui/material";
+import {
+  Container,
+  Typography,
+  TextField,
+  Grid,
+  Link,
+  Box,
+  Avatar,
+  Stack,
+  Toolbar,
+} from "@mui/material";
 import { useState } from "react";
 import * as Yup from "yup";
 import { useFormik } from "formik";
@@ -18,7 +28,7 @@ import colorConfigs from "../../../configs/colorConfigs";
 
 const Login = (props: any) => {
   const [loading, setLoading] = useState(false);
-  const [error, seterror] = useState('')
+  const [error, seterror] = useState("");
   const dispatch = useDispatch();
 
   const validationSchema = Yup.object().shape({
@@ -38,7 +48,7 @@ const Login = (props: any) => {
     validationSchema,
     onSubmit: (values) => {
       setLoading(true);
-      console.log(values)
+      console.log(values);
       api.auth
         .signInRequest$(values)
         .pipe(
@@ -47,16 +57,16 @@ const Login = (props: any) => {
         )
         .subscribe({
           next: async (user) => {
-            formik.resetForm()
-            dispatch(actions.user.saveUser(user))
-            seterror('')
-            setLoading(false)
+            formik.resetForm();
+            dispatch(actions.user.saveUser(user));
+            seterror("");
+            setLoading(false);
           },
           error: (error: any) => {
             // console.log(error.response.data.detail)
-            seterror(error?.response?.data?.detail)
-            setLoading(false)
-          }
+            seterror(error?.response?.data?.detail);
+            setLoading(false);
+          },
         });
     },
   });
@@ -64,12 +74,14 @@ const Login = (props: any) => {
   return (
     <>
       <Grid container>
-        <Grid xs={3} sx={{
-          justifyContent: 'center',
-          alignItems: 'center',
-          display: 'flex',
-
-        }}>
+        <Grid
+          xs={3}
+          sx={{
+            justifyContent: "center",
+            alignItems: "center",
+            display: "flex",
+          }}
+        >
           <Box>
             <Avatar
               src={assets.images.logo}
@@ -79,116 +91,167 @@ const Login = (props: any) => {
                   sm: 60,
                   md: 80,
                   lg: 100,
-                  xl: 120
+                  xl: 120,
                 },
                 width: {
                   xs: 40,
                   sm: 60,
                   md: 80,
                   lg: 100,
-                  xl: 120
-                }
+                  xl: 120,
+                },
               }}
             />
           </Box>
         </Grid>
-        <Grid xs={9}
+        <Grid
+          xs={9}
           sx={{
-            alignItems: 'center',
-            display: 'flex'
+            alignItems: "center",
+            display: "flex",
           }}
         >
           <Stack spacing={2} direction="column">
-            <Typography variant="h4" gutterBottom sx={{
-              color: colorConfigs.sidebar.bg,
-              letterSpacing: 3,
-              fontWeight: '700',
-              fontSize: {
-                xs: 12,
-                sm: 18,
-                md: 30,
-                lg: 40,
-                xl: 40
-              },
-              fontFamily: ['Roboto', 'sans-serif'].join(",")
-            }}>
+            <Typography
+              variant="h4"
+              gutterBottom
+              sx={{
+                color: colorConfigs.sidebar.bg,
+                letterSpacing: 3,
+                fontWeight: "700",
+                fontSize: {
+                  xs: 14,
+                  sm: 18,
+                  md: 30,
+                  lg: 40,
+                  xl: 40,
+                },
+                fontFamily: ["Roboto", "sans-serif"].join(","),
+              }}
+            >
               Patient ManageMent System
             </Typography>
-
           </Stack>
         </Grid>
       </Grid>
       <Grid container marginTop={5}>
-        <Grid xs={12} sm={6} md={6} lg={6} xl={6} sx={{
-          justifyContent: 'center',
-          alignItems: 'center',
-          display: 'flex'
-        }}>
+        <Grid
+          xs={12}
+          sm={6}
+          md={6}
+          lg={6}
+          xl={6}
+          sx={{
+            justifyContent: "center",
+            alignItems: "center",
+            display: "flex",
+          }}
+        >
           <Box>
-            <Avatar src={assets.images.banner}
+            <Avatar
+              src={assets.images.banner}
               sx={{
                 height: {
                   xs: 120,
                   sm: 160,
                   md: 220,
                   lg: 260,
-                  xl: 340
+                  xl: 340,
                 },
                 width: {
-                  xs: 260,
-                  sm: 280,
+                  xs: 300,
+                  sm: 320,
                   md: 340,
                   lg: 500,
-                  xl: 550
-                }
+                  xl: 550,
+                },
               }}
-
-              variant="square" />
+              variant="square"
+            />
           </Box>
         </Grid>
-        <Grid xs={12} sm={6} md={6} lg={6}
+        <Grid
+          xs={12}
+          sm={6}
+          md={6}
+          lg={6}
           sx={{
-            display: 'flex',
-            alignItems:'center',
-            justifyContent:'center',
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
             marginTop: {
-              xs: 2
-            }
+              xs: 2,
+            },
           }}
         >
-
-          <form onSubmit={formik.handleSubmit} >
-            <Toolbar sx={{ flexDirection: 'column', alignItems: 'flex-start' }}>
-              <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }}>
-                <Typography variant="h4"  sx={{
-                  color: colorConfigs.sidebar.bg,
-                  letterSpacing: 2,
-                  fontSize: {
-                    xs: 18,
-                    sm: 20,
-                    md: 24,
-                    lg: 28,
-                    xl: 35
-                  },
-                  fontWeight: '500',
-                  fontFamily: ['Roboto', 'sans-serif'].join(",")
-                }}>
+          <form onSubmit={formik.handleSubmit}>
+            <Toolbar sx={{ flexDirection: "column", alignItems: "flex-start" }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "flex-start",
+                  alignItems: "center",
+                }}
+              >
+                <Typography
+                  variant="h4"
+                  sx={{
+                    color: colorConfigs.sidebar.bg,
+                    letterSpacing: 2,
+                    fontSize: {
+                      xs: 14,
+                      sm: 20,
+                      md: 24,
+                      lg: 28,
+                      xl: 35,
+                    },
+                    fontWeight: "500",
+                    fontFamily: ["Roboto", "sans-serif"].join(","),
+                  }}
+                >
                   SignIn with BP Number
                 </Typography>
-                <Box sx={{ backgroundColor: '#1976d2', width: '30px', height: '15px', marginLeft: "20px", borderRadius: '3px' }} />
-                <Box sx={{ backgroundColor: '#1976d2', width: '30px', height: '15px', marginInline: 1, borderRadius: '3px' }} />
-                <Box sx={{ backgroundColor: '#1976d2', width: '30px', height: '15px', borderRadius: '3px' }} />
-
+                <Box
+                  sx={{
+                    backgroundColor: "#1976d2",
+                    width: "30px",
+                    height: "15px",
+                    marginLeft: "20px",
+                    borderRadius: "3px",
+                  }}
+                />
+                <Box
+                  sx={{
+                    backgroundColor: "#1976d2",
+                    width: "30px",
+                    height: "15px",
+                    marginInline: 1,
+                    borderRadius: "3px",
+                  }}
+                />
+                <Box
+                  sx={{
+                    backgroundColor: "#1976d2",
+                    width: "30px",
+                    height: "15px",
+                    borderRadius: "3px",
+                  }}
+                />
               </Box>
-              <Typography variant="h4" gutterBottom sx={{
-                color: 'red',
-                fontSize: 12,
-                fontFamily: ['Raleway', 'sans-serif'].join(",")
-              }}>
+              <Typography
+                variant="h4"
+                gutterBottom
+                sx={{
+                  color: "red",
+                  fontSize: 12,
+                  fontFamily: ["Raleway", "sans-serif"].join(","),
+                }}
+              >
                 {error}
               </Typography>
             </Toolbar>
-            <Toolbar >
+            <Toolbar>
               <TextField
                 fullWidth
                 id="bpNumber"
@@ -197,7 +260,9 @@ const Login = (props: any) => {
                 type="text"
                 value={formik.values.bpNumber}
                 onChange={formik.handleChange}
-                error={formik.touched.bpNumber && Boolean(formik.errors.bpNumber)}
+                error={
+                  formik.touched.bpNumber && Boolean(formik.errors.bpNumber)
+                }
                 helperText={formik.touched.bpNumber && formik.errors.bpNumber}
                 autoComplete="off"
               />
@@ -218,7 +283,6 @@ const Login = (props: any) => {
                 helperText={formik.touched.password && formik.errors.password}
                 autoComplete="off"
               />
-
             </Toolbar>
             <Toolbar>
               <LoadingButton
@@ -231,25 +295,15 @@ const Login = (props: any) => {
               >
                 SUMBIT
               </LoadingButton>
-
             </Toolbar>
             <Toolbar>
-              <Link variant="body2">
-                {"Don't have an account? "}
-              </Link>
+              <Link variant="body2">{"New to PMS? "}</Link>
 
               <Link href="#" variant="body2" sx={{ marginLeft: 2 }}>
-
-                <NavLink to={'/register'}>
-                  Sign Up
-                </NavLink>
+                <NavLink to={"/register"}>Sign Up</NavLink>
               </Link>
             </Toolbar>
-
           </form>
-
-
-
         </Grid>
       </Grid>
       <Box
@@ -259,29 +313,73 @@ const Login = (props: any) => {
           backgroundColor: "blue",
           paddingTop: "1rem",
           paddingBottom: "1rem",
-          marginTop: 10
+          marginTop: 10,
         }}
       >
         <Container maxWidth="lg">
-          <Grid container >
+          <Grid container>
             <Grid item xs={6}>
-              <Typography color="black" variant="h5" sx={{
-                color: 'white',
-                fontSize: 14,
-                fontFamily: ['Raleway', 'sans-serif'].join(",")
-              }} paragraph>
-                Copyright © {`${new Date().getFullYear()}`}.
-                All rights reserved Special Branch, Bangladesh Police.
+              <Typography
+                color="black"
+                variant="h5"
+                sx={{
+                  color: "white",
+                  fontSize: 14,
+                  fontFamily: ["Raleway", "sans-serif"].join(","),
+                }}
+                paragraph
+              >
+                Copyright © {`${new Date().getFullYear()}`}. All rights reserved
+                Special Branch, Bangladesh Police.
               </Typography>
             </Grid>
-            <Grid item xs={6} alignItems={'center'}>
-              <Typography color="white" variant="subtitle1" sx={{
-                color: 'white',
-                fontSize: 14,
-                fontFamily: ['Raleway', 'sans-serif'].join(",")
-              }}>
-                Developed By- SB ICT OFFICERS
+            <Grid item xs={6} alignItems={"center"}>
+              <Typography
+                color="white"
+                variant="subtitle1"
+                sx={{
+                  color: "white",
+                  fontSize: 14,
+                  fontFamily: ["Roboto", "sans-serif"].join(","),
+                }}
+              >
+                Developed By-
               </Typography>
+              <Box sx={{paddingLeft:2}}>
+                <Typography
+                  color="white"
+                  variant="subtitle1"
+                  sx={{
+                    color: "white",
+                    fontSize: 10,
+                    fontFamily: ["Roboto", "sans-serif"].join(","),
+                  }}
+                >
+                  Programmer, Md. Liaz Mahmud
+                </Typography>
+                <Typography
+                  color="white"
+                  variant="subtitle1"
+                  sx={{
+                    color: "white",
+                    fontSize: 10,
+                    fontFamily: ["Roboto", "sans-serif"].join(","),
+                  }}
+                >
+                   Programmer, Md. Akash
+                </Typography>
+                <Typography
+                  color="white"
+                  variant="subtitle1"
+                  sx={{
+                    color: "white",
+                    fontSize: 10,
+                    fontFamily: ["Roboto", "sans-serif"].join(","),
+                  }}
+                >
+                  AME, Md. Faridul Islam
+                </Typography>
+              </Box>
             </Grid>
           </Grid>
         </Container>

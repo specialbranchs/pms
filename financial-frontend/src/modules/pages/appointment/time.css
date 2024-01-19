@@ -1,0 +1,9 @@
+input[type="time"]::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 0);
+    opacity: 1;
+    display: block;
+    background-repeat:  no-repeat;
+    width: 25px;
+    height: 25px;
+    border-width: thin
+}

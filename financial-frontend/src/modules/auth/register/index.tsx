@@ -6,7 +6,7 @@ import { useFormik } from "formik";
 import api from "../../../api";
 import { doOnSubscribe } from "../../../utils/rxjs.utils";
 import { finalize } from "rxjs";
-import { Avatar, Box, FormControl, FormHelperText, Grid, InputLabel, Link, MenuItem, Select, Stack, TextField, Toolbar, Typography } from "@mui/material";
+import { Avatar, Box, Divider, FormControl, FormHelperText, Grid, InputLabel, Link, MenuItem, Select, Stack, TextField, Toolbar, Typography } from "@mui/material";
 import { LoadingButton } from "@mui/lab";
 import assets from "../../../assets";
 import colorConfigs from "../../../configs/colorConfigs";
@@ -132,6 +132,7 @@ const Register = (props: any) => {
                 <Box sx={{ backgroundColor: '#1976d2', width: '30px', height: '15px', marginInline: 1, borderRadius: '3px' }} />
                 <Box sx={{ backgroundColor: '#1976d2', width: '30px', height: '15px', borderRadius: '3px' }} />
               </Box>
+             
               <Typography variant="h4" gutterBottom sx={{
                 color: 'red',
                 fontSize: 12,
@@ -139,7 +140,7 @@ const Register = (props: any) => {
               }}>
                 {/* {error} */}
               </Typography>
-
+              
               <FormControl fullWidth variant="standard" sx={{ mr: 1, my: 1 }} >
 
                 <TextField

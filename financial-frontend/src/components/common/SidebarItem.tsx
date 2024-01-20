@@ -24,14 +24,14 @@ const SidebarItem = ({ item }: Props) => {
             backgroundColor: colorConfigs.sidebar.hoverBg
           },
           backgroundColor: appState?.appState === item.state ? colorConfigs.sidebar.activeBg : "unset",
-          paddingY: "12px",
-          paddingX: "24px",
           fontFamily:['Roboto Condensed', 'sans-serif'].join(","),
-        //  fontWeight:'700'
+          color: appState?.appState === item.state ? colorConfigs.topbar.bg : "unset",
+          transition: 'linear .5s'
         }}
       >
         <ListItemIcon sx={{
-          color: colorConfigs.sidebar.color
+          color: appState?.appState === item.state ? colorConfigs.topbar.bg : "unset",
+          transition: 'linear .5s'
         }}>
           {item.sidebarProps.icon && item.sidebarProps.icon}
         </ListItemIcon>

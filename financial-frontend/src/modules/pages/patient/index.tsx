@@ -62,7 +62,7 @@ const PatientHomeScreen = () => {
             )
             .subscribe({
                 next: async (res) => {
-                    console.log('getrowrow', res)
+                    // console.log('getrowrow', res)
                     setapp(res.data)
 
                 },
@@ -104,11 +104,11 @@ const PatientHomeScreen = () => {
                                 sx={{
                                     ...fontFamily, textTransform: 'uppercase', letterSpacing: 1,
                                     fontSize: {
-                                        xs: 16,
-                                        sm: 18,
-                                        md: 20,
-                                        lg: 22,
-                                        xl: 22
+                                        xs: 12,
+                                        sm: 14,
+                                        md: 18,
+                                        lg: 18,
+                                        xl: 18
                                     }
                                 }}
                             >
@@ -117,10 +117,10 @@ const PatientHomeScreen = () => {
                             <Typography sx={{
                                 ...fontFamily, letterSpacing: 1,
                                 fontSize: {
-                                    xs: 12,
-                                    sm: 14,
-                                    md: 18,
-                                    lg: 20,
+                                    xs: 10,
+                                    sm: 12,
+                                    md: 14,
+                                    lg: 18,
                                     xl: 20
                                 }
                             }} variant="subtitle1" color="text.secondary" component="div">

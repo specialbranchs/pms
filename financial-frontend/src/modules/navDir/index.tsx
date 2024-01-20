@@ -1,4 +1,4 @@
-import { Route, Routes, HashRouter } from "react-router-dom";
+import { Route, Routes, HashRouter, BrowserRouter } from "react-router-dom";
 import MainLayout from "../../components/layout/MainLayout";
 import { routes } from "../../routes";
 import { useSelector } from "react-redux";
@@ -13,21 +13,20 @@ import actions from "../../state/actions";
 import { User } from "../../../typings/structures";
 import { routespatients } from "../../routes/patientindex";
 import { MTmS } from "../../utils/config";
-
+import DrawerMainScreen from "../../components/layout/DrawerMainLayout";
 
 function NavMainScreen() {
-  const dispatch = useDispatch()
-  const { user } = useSelector((state: RootState) => state.currentUser)
+  const dispatch = useDispatch();
+  const { user } = useSelector((state: RootState) => state.currentUser);
   //  console.log('user', user)
 
   const refreshToken = () => {
-    if (!user)
-      return
+    if (!user) return;
     api.auth
       .TokenRefresh$(user)
       .pipe(
-        doOnSubscribe(() => { }),
-        finalize(() => { })
+        doOnSubscribe(() => {}),
+        finalize(() => {})
       )
       .subscribe({
         next: async (res) => {
@@ -40,36 +39,26 @@ function NavMainScreen() {
               access: res.access,
               is_superuser: user.is_superuser,
               is_adminuser: user.is_adminuser,
-              is_staff: user.is_staff
-            }
-            dispatch(actions.user.saveUser(updateUser))
+              is_staff: user.is_staff,
+            };
+            dispatch(actions.user.saveUser(updateUser));
           }
-
         },
         error: (error: any) => {
           // console.log('error', error)
-          dispatch(actions.logOut())
-        }
+          dispatch(actions.logOut());
+        },
       });
-
-  }
+  };
   useEffect(() => {
-    refreshToken()
-    let interval = setInterval(refreshToken, 30*MTmS)
+    refreshToken();
+    let interval = setInterval(refreshToken, 30 * MTmS);
     return () => clearInterval(interval);
-  }, [])
-  return (
-    user ?
-      <HashRouter>
-        <Routes>
-          <Route path="/" element={<MainLayout />}>
-            {user.is_superuser === false
-              && user.is_adminuser === false &&
-              user.is_staff === true ? routespatients : routes}
-          </Route>
-        </Routes>
-      </HashRouter> :
-      <AuthHomeScreen />
+  }, []);
+  return user ? (
+   <DrawerMainScreen/>
+  ) : (
+    <AuthHomeScreen />
   );
 }
 

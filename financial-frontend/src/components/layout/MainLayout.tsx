@@ -15,7 +15,7 @@ const MainLayout = () => {
   }
   return (
     <Box sx={{ display: "flex" }}>
-      <Topbar setflag={setflag} flag={flag} />
+      {/* <Topbar setflag={setflag} flag={flag} /> */}
       <Box
         component="nav"
         sx={{
@@ -23,7 +23,7 @@ const MainLayout = () => {
           width: sidebar,
         }}
       >
-        <Sidebar flag={flag} />
+        {/* <Sidebar flag={flag} /> */}
       </Box>
       <Box
         component="main"

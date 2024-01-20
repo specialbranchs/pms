@@ -8,43 +8,14 @@ import SidebarItemCollapse from "./SidebarItemCollapse";
 import appRoutes from "../../routes/appRoutes";
 import { AccessUser } from "../../utils/directUser";
 import appRoutesPatients from "../../routes/appRoutesPatient";
-type Props = {
-  flag: boolean
-}
-const Sidebar = ({ flag }: Props) => {
+
+const Sidebar = () => {
   const user = AccessUser()
-  let sidebar = sizeConfigs.sidebarfull.width
-  if (flag) {
-    sidebar = sizeConfigs.sidebarhalf.width
-  }
+ 
   return (
-    <Drawer
-      variant="permanent"
-      
-      sx={{
-        width: sidebar,
-        flexShrink: 0,
-        "& .MuiDrawer-paper": {
-          width: sidebar,
-          boxSizing: "border-box",
-          borderRight: "0px",
-          backgroundColor: colorConfigs.sidebar.bg,
-          color: colorConfigs.sidebar.color, 
-          transition:'linear .5s',
-         
-        }
-      }}
-    >
+   
       <List disablePadding>
-        <Toolbar sx={{ marginBottom: "20px" }}>
-          <Stack
-            sx={{ width: "100%" }}
-            direction="row"
-            justifyContent="center"
-          >
-            <Avatar src={assets.images.logo} />
-          </Stack>
-        </Toolbar>
+       
         {
           user.is_superuser === false
             && user.is_adminuser === false &&
@@ -81,7 +52,7 @@ const Sidebar = ({ flag }: Props) => {
 
         }
       </List>
-    </Drawer>
+  
   );
 };
 

@@ -1,4 +1,4 @@
-import { Collapse, List, ListItemButton, ListItemIcon, ListItemText, Typography } from "@mui/material";
+import { Collapse, Divider, List, ListItemButton, ListItemIcon, ListItemText, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import colorConfigs from "../../configs/colorConfigs";
 import { RouteType } from "../../routes/config";
@@ -57,6 +57,7 @@ const SidebarItemCollapse = ({ item }: Props) => {
           />
           {open ? <ExpandLessOutlinedIcon /> : <ExpandMoreOutlinedIcon />}
         </ListItemButton>
+        
         <Collapse in={open} timeout="auto">
           <List>
             {item.child?.map((route, index) => (
@@ -70,6 +71,7 @@ const SidebarItemCollapse = ({ item }: Props) => {
                       <SidebarItem item={route} key={index} /> :
                       null
                 )
+               
               ) : null
             ))}
           </List>

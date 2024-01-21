@@ -129,7 +129,7 @@ const Login = (props: any) => {
                 fontFamily: ["Roboto", "sans-serif"].join(","),
               }}
             >
-              Patient ManageMent System
+              Patient Management System
             </Typography>
           </Stack>
         </Grid>
@@ -307,10 +307,11 @@ const Login = (props: any) => {
         </Grid>
       </Grid>
       <Box
+       
         sx={{
           width: "100%",
           height: "auto",
-          backgroundColor: "blue",
+          backgroundColor:'#1976d2;',
           paddingTop: "1rem",
           paddingBottom: "1rem",
           marginTop: 10,
@@ -323,9 +324,9 @@ const Login = (props: any) => {
                 color="black"
                 variant="h5"
                 sx={{
-                  color: "white",
+                  color: colorConfigs.sidebar.bg,
                   fontSize: 14,
-                  fontFamily: ["Raleway", "sans-serif"].join(","),
+                  fontFamily: ["Roboto", "sans-serif"].join(","),
                 }}
                 paragraph
               >
@@ -338,7 +339,7 @@ const Login = (props: any) => {
                 color="white"
                 variant="subtitle1"
                 sx={{
-                  color: "white",
+                  color: colorConfigs.sidebar.bg,
                   fontSize: 14,
                   fontFamily: ["Roboto", "sans-serif"].join(","),
                 }}
@@ -350,29 +351,40 @@ const Login = (props: any) => {
                   color="white"
                   variant="subtitle1"
                   sx={{
-                    color: "white",
+                    color: colorConfigs.sidebar.bg,
                     fontSize: 10,
                     fontFamily: ["Roboto", "sans-serif"].join(","),
                   }}
                 >
-                  Programmer, Md. Liaz Mahmud
+                  Programmer, Md. Liaz Mahamud Lemon,
                 </Typography>
                 <Typography
                   color="white"
                   variant="subtitle1"
                   sx={{
-                    color: "white",
+                    color: colorConfigs.sidebar.bg,
                     fontSize: 10,
                     fontFamily: ["Roboto", "sans-serif"].join(","),
                   }}
                 >
-                   Programmer, Md. Akash
+                   Programmer, Md. Asif Anjum Akash
                 </Typography>
                 <Typography
                   color="white"
                   variant="subtitle1"
                   sx={{
-                    color: "white",
+                    color: colorConfigs.sidebar.bg,
+                    fontSize: 10,
+                    fontFamily: ["Roboto", "sans-serif"].join(","),
+                  }}
+                >
+                   Programmer, Md Rokan uddin
+                </Typography>
+                <Typography
+                  color="white"
+                  variant="subtitle1"
+                  sx={{
+                    color: colorConfigs.sidebar.bg,
                     fontSize: 10,
                     fontFamily: ["Roboto", "sans-serif"].join(","),
                   }}

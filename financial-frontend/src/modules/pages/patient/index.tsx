@@ -130,7 +130,7 @@ const PatientHomeScreen = () => {
                         <Box sx={{ display: 'flex', alignItems: 'center', pl: 2, pb: 1 }}>
 
                             {!app ? <Button sx={fontFamily} variant="contained" color="success" onClick={() => handleClickOpen()}>
-                                GO
+                                New Appointment
                             </Button> :
                                 <Typography variant="subtitle1" sx={fontFamily} component="div">
                                     Reason : {app.reason}

@@ -10,7 +10,7 @@ const useDesignation = () => {
   const [designations, setDesignations] = useState<Array<DesignationType>>([
     {
       id: 0,
-      dig_name: 'select designation' 
+      dig_name: 'Select designation' 
     }
   ]);
   const [designationLoading, setDesignationLoading] = useState(false);
@@ -28,7 +28,7 @@ const useDesignation = () => {
             setDesignations([
               {
                 id: 0,
-                dig_name: 'select designation' 
+                dig_name: 'Select designation' 
               },
               ...designationData
             ]);

@@ -131,10 +131,15 @@ const PatientHomeScreen = () => {
 
                             {!app ? <Button sx={fontFamily} variant="contained" color="success" onClick={() => handleClickOpen()}>
                                 New Appointment
-                            </Button> :
-                                <Typography variant="subtitle1" sx={fontFamily} component="div">
+                            </Button> : <Box>
+                                <Typography variant="subtitle1" sx={{ ...fontFamily, fontSize: 12 }} component="div">
                                     Reason : {app.reason}
                                 </Typography>
+                                {app?.note && <Typography variant="subtitle1" sx={{ ...fontFamily, fontSize: 12 }} component="div">
+                                    Feedback : {app.note}
+                                </Typography>
+                                }
+                            </Box>
                             }
                         </Box>
                     </Box>

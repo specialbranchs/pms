@@ -26,7 +26,8 @@ const SidebarItem = ({ item }: Props) => {
           backgroundColor: appState?.appState === item.state ? colorConfigs.sidebar.activeBg : "unset",
           fontFamily:['Roboto Condensed', 'sans-serif'].join(","),
           color: appState?.appState === item.state ? colorConfigs.topbar.bg : "unset",
-          transition: 'linear .5s'
+          transition: 'linear .5s',
+          px: 2.5,
         }}
       >
         <ListItemIcon sx={{

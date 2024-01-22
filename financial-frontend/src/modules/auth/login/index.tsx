@@ -307,11 +307,11 @@ const Login = (props: any) => {
         </Grid>
       </Grid>
       <Box
-       
+
         sx={{
           width: "100%",
           height: "auto",
-          backgroundColor:'#1976d2;',
+          backgroundColor: '#1976d2;',
           paddingTop: "1rem",
           paddingBottom: "1rem",
           marginTop: 10,
@@ -319,12 +319,12 @@ const Login = (props: any) => {
       >
         <Container maxWidth="lg">
           <Grid container>
-            <Grid item xs={6}>
+            <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
               <Typography
                 color="black"
                 variant="h5"
                 sx={{
-                  color: colorConfigs.sidebar.bg,
+                  color: 'white',
                   fontSize: 14,
                   fontFamily: ["Roboto", "sans-serif"].join(","),
                 }}
@@ -334,63 +334,69 @@ const Login = (props: any) => {
                 Special Branch, Bangladesh Police.
               </Typography>
             </Grid>
-            <Grid item xs={6} alignItems={"center"}>
+            <Grid item xs={12} sm={12} md={6} lg={6} xl={6} alignItems={"center"}>
               <Typography
                 color="white"
                 variant="subtitle1"
                 sx={{
-                  color: colorConfigs.sidebar.bg,
+                  color: 'white',
                   fontSize: 14,
                   fontFamily: ["Roboto", "sans-serif"].join(","),
                 }}
               >
                 Developed By-
               </Typography>
-              <Box sx={{paddingLeft:2}}>
-                <Typography
-                  color="white"
-                  variant="subtitle1"
-                  sx={{
-                    color: colorConfigs.sidebar.bg,
-                    fontSize: 10,
-                    fontFamily: ["Roboto", "sans-serif"].join(","),
-                  }}
-                >
-                  Programmer, Md. Liaz Mahamud Lemon,
-                </Typography>
-                <Typography
-                  color="white"
-                  variant="subtitle1"
-                  sx={{
-                    color: colorConfigs.sidebar.bg,
-                    fontSize: 10,
-                    fontFamily: ["Roboto", "sans-serif"].join(","),
-                  }}
-                >
-                   Programmer, Md. Asif Anjum Akash
-                </Typography>
-                <Typography
-                  color="white"
-                  variant="subtitle1"
-                  sx={{
-                    color: colorConfigs.sidebar.bg,
-                    fontSize: 10,
-                    fontFamily: ["Roboto", "sans-serif"].join(","),
-                  }}
-                >
-                   Programmer, Md Rokan uddin
-                </Typography>
-                <Typography
-                  color="white"
-                  variant="subtitle1"
-                  sx={{
-                    color: colorConfigs.sidebar.bg,
-                    fontSize: 10,
-                    fontFamily: ["Roboto", "sans-serif"].join(","),
-                  }}
-                >
-                  AME, Md. Faridul Islam
-                </Typography>
+              <Box sx={{ display: 'flex', justifyContent: 'space-evenly'}} >
+                <Box >
+                  <Typography
+                    color="white"
+                    variant="subtitle1"
+                    sx={{
+                      color: 'white',
+                      fontSize: 10,
+                      fontFamily: ["Roboto", "sans-serif"].join(","),
+                    }}
+                  >
+                    Programmer, Md. Liaz Mahamud Lemon,
+                  </Typography>
+                  <Typography
+                    color="white"
+                    variant="subtitle1"
+                    sx={{
+                      color: 'white',
+                      fontSize: 10,
+                      fontFamily: ["Roboto", "sans-serif"].join(","),
+                    }}
+                  >
+                    Ass. Maintenance Eng.,  Md. Faridul Islam
+                  </Typography>
+
+                </Box>
+                <Box >
+                  <Typography
+                    color="white"
+                    variant="subtitle1"
+                    sx={{
+                      color: 'white',
+                      fontSize: 10,
+                      fontFamily: ["Roboto", "sans-serif"].join(","),
+                    }}
+                  >
+                    Programmer, Md. Asif Anjum Akash
+                  </Typography>
+                  <Typography
+                    color="white"
+                    variant="subtitle1"
+                    sx={{
+                      color: 'white',
+                      fontSize: 10,
+                      fontFamily: ["Roboto", "sans-serif"].join(","),
+                    }}
+                  >
+                    Programmer, Md Rokan uddin
+                  </Typography>
+
+                </Box>
               </Box>
             </Grid>
           </Grid>

@@ -384,7 +384,7 @@ const Login = (props: any) => {
                   >
                     Programmer, Md. Asif Anjum Akash
                   </Typography>
-                  <Typography
+                  {/* <Typography
                     color="white"
                     variant="subtitle1"
                     sx={{
@@ -394,7 +394,7 @@ const Login = (props: any) => {
                     }}
                   >
                     Programmer, Md Rokan uddin
-                  </Typography>
+                  </Typography> */}
 
                 </Box>
               </Box>

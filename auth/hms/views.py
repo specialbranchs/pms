@@ -209,6 +209,7 @@ class ZoneApiView(APIView):
         return Response(serializer.data)
     
 class ProfileApiView(APIView):
+    permission_classes = [IsAuthenticated]
     def put(self,request):
         data=request.data
         id=data['id']
@@ -219,3 +220,17 @@ class ProfileApiView(APIView):
         serializer=UserSerializer(user)
         return Response(serializer.data)
             
+class changePassword(APIView):
+    permission_classes = [IsAuthenticated]
+    def post(self,request):
+        id=request.data['id']
+        currentPassword=request.data['currentPassword']
+        newPassword=request.data['newPassword']
+        user=CustomUser.objects.get(pk=id)
+        if user.check_password(currentPassword):
+            user.set_password(newPassword)
+            user.save()
+            return Response({'data':True})
+        
+        
+        return Response({'data':False})           

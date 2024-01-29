@@ -207,3 +207,15 @@ class ZoneApiView(APIView):
         zone=Zone.objects.all()
         serializer=ZoneSerializer(zone,many=True)
         return Response(serializer.data)
+    
+class ProfileApiView(APIView):
+    def put(self,request):
+        data=request.data
+        id=data['id']
+        picture=data['picture']
+        user=CustomUser.objects.get(pk=id)
+        user.picture=picture
+        user.save()
+        serializer=UserSerializer(user)
+        return Response(serializer.data)
+            

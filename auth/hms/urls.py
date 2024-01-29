@@ -17,6 +17,7 @@ urlpatterns = [
     # path('logout', LogOutView.as_view()),
     path('zone',ZoneApiView.as_view()),
     path('getuser',GetUserApiView.as_view()),
+    path('update-profile',ProfileApiView.as_view()),
     
     path('token/', MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),

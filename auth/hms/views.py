@@ -234,3 +234,24 @@ class changePassword(APIView):
         
         
         return Response({'data':False})           
+    
+    
+class DeleteUserApiView(APIView):
+    permission_classes = [IsAuthenticated]
+    def put(self, request):
+        id = request.data['id']
+        
+        res = {
+            "mess": 'Delete succesfully',
+            "del": True,
+            "id": id
+        }
+       
+
+        ins = CustomUser.objects.get(pk=id)
+        ins.delete()
+        # data = PodokName.objects.all()
+        # serializer = PodokNameSerializer(data, many=True)
+
+        return Response(res)
+

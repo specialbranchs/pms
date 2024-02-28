@@ -16,6 +16,8 @@ import { finalize } from "rxjs/operators";
 import { tConvert } from "../../../utils/timeConvert";
 import AppModal from "./AppModal";
 import { fontFamily } from "../appointment/appointmentList";
+import { PLAY_STORE } from "../../../utils/config";
+import { PlayArrowSharp } from "@mui/icons-material";
 
 const PatientHomeScreen = () => {
   const user = useSelector((state: RootState) => state.currentUser.user);
@@ -172,12 +174,12 @@ const PatientHomeScreen = () => {
             </Box>
             <Box sx={{ display: "flex", alignItems: "center", pl: 2, pb: 1 }}>
               <Button
-                sx={{ ...fontFamily, fontSize: 12}}
+                sx={{ ...fontFamily, fontSize: 12 }}
                 variant="contained"
-               
+                startIcon={<PlayArrowSharp />}
               >
                 <Link
-                  href="https://play.google.com/store/apps/details?id=com.com.sb.pms&hl=en&gl=US"
+                  href={PLAY_STORE}
                   underline="none"
                   target="_blank"
                   sx={{ color: "white" }}

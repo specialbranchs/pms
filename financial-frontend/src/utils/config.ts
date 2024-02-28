@@ -1,7 +1,7 @@
 export const BACKEND_URL=!process.env.NODE_ENV || process.env.NODE_ENV === 'development'?'http://127.0.0.1:8000':'https://pms.specialbranch.gov.bd'
 export const BACKEND_BASE=`${BACKEND_URL}/api/v2`
 export const PASSWORD_MIN_LENGTH=6
-
+export const PLAY_STORE='https://play.google.com/store/apps/details?id=com.com.sb.pms&hl=en&gl=US'
 
 export const MTmS=60000
 export const PODOK="podok"

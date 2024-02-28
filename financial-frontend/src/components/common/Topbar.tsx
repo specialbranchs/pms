@@ -4,6 +4,8 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { RootState } from "../../state/reducer";
+import { PLAY_STORE } from "../../utils/config";
+import { PlayArrowOutlined } from "@mui/icons-material";
 
 const Topbar = () => {
   const dispatch = useDispatch();
@@ -63,35 +65,23 @@ const Topbar = () => {
         </ListItemButton>
       </Box>
       <Box ml={2}>
-        <ListItemButton
-          sx={{
-            borderRadius: 1,
-            fontFamily: ["Roboto", "sans-serif"].join(","),
-            fontSize: {
-              xs: 12,
-              sm: 14,
-              md: 16,
-              lg: 16,
-              xl: 16,
-            },
-            color: "black",
-            fontWeight: "300",
-            backgroundColor: "white",
-            "&:hover": {
-              fontWeight: "500",
-              color: "white",
-              border: "1px solid #000",
-            },
-          }}
+        <Link
+          href={PLAY_STORE}
+          underline="none"
+          target="_blank"
+          variant="body2"
+          marginLeft={5}
+          border={"1px solid blue"}
+          // color={"red"}
+          padding={"2px"}
+          borderRadius={"3px"}
+          justifyContent={"center"}
+          alignItems={"center"}
+          display={"flex"}
         >
-          <Link
-            href="https://play.google.com/store/apps/details?id=com.com.sb.pms&hl=en&gl=US"
-            underline="none"
-            target="_blank"
-          >
-            app
-          </Link>
-        </ListItemButton>
+          <PlayArrowOutlined />
+          use App
+        </Link>
       </Box>
     </Toolbar>
   );

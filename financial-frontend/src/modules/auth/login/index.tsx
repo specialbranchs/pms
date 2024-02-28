@@ -13,7 +13,7 @@ import { useState } from "react";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 
-import { PASSWORD_MIN_LENGTH } from "../../../utils/config";
+import { PASSWORD_MIN_LENGTH, PLAY_STORE } from "../../../utils/config";
 import { SignInData } from "../../../../typings/formData";
 
 import { useDispatch } from "react-redux";
@@ -25,6 +25,7 @@ import { finalize } from "rxjs/operators";
 import { doOnSubscribe } from "../../../utils/rxjs.utils";
 import assets from "../../../assets";
 import colorConfigs from "../../../configs/colorConfigs";
+import { PlayArrowOutlined } from "@mui/icons-material";
 
 const Login = (props: any) => {
   const [loading, setLoading] = useState(false);
@@ -303,28 +304,32 @@ const Login = (props: any) => {
                 <NavLink to={"/register"}>Sign Up</NavLink>
               </Link>
               <Link
-                  href="https://play.google.com/store/apps/details?id=com.com.sb.pms&hl=en&gl=US"
-                  underline="none"
-                  target="_blank"
-                  variant="body2"
-                  marginLeft={5}
-                  border={'1px solid red'}
-                  color={'red'}
-                  padding={'2px'}
-                  borderRadius={"3px"}
-                >
-                  use App
-                </Link>
+                href={PLAY_STORE}
+                underline="none"
+                target="_blank"
+                variant="body2"
+                marginLeft={5}
+                border={"1px solid blue"}
+                // color={"red"}
+                padding={"2px"}
+                borderRadius={"3px"}
+                justifyContent={"center"}
+                alignItems={"center"}
+                display={"flex"}
+              >
+                  <PlayArrowOutlined />
+                use App
+              
+              </Link>
             </Toolbar>
           </form>
         </Grid>
       </Grid>
       <Box
-
         sx={{
           width: "100%",
           height: "auto",
-          backgroundColor: '#1976d2;',
+          backgroundColor: "#1976d2;",
           paddingTop: "1rem",
           paddingBottom: "1rem",
           marginTop: 10,
@@ -337,7 +342,7 @@ const Login = (props: any) => {
                 color="black"
                 variant="h5"
                 sx={{
-                  color: 'white',
+                  color: "white",
                   fontSize: 14,
                   fontFamily: ["Roboto", "sans-serif"].join(","),
                 }}
@@ -347,25 +352,33 @@ const Login = (props: any) => {
                 Special Branch, Bangladesh Police.
               </Typography>
             </Grid>
-            <Grid item xs={12} sm={12} md={6} lg={6} xl={6} alignItems={"center"}>
+            <Grid
+              item
+              xs={12}
+              sm={12}
+              md={6}
+              lg={6}
+              xl={6}
+              alignItems={"center"}
+            >
               <Typography
                 color="white"
                 variant="subtitle1"
                 sx={{
-                  color: 'white',
+                  color: "white",
                   fontSize: 14,
                   fontFamily: ["Roboto", "sans-serif"].join(","),
                 }}
               >
                 Developed By-
               </Typography>
-              <Box sx={{ display: 'flex', justifyContent: 'space-evenly'}} >
-                <Box >
+              <Box sx={{ display: "flex", justifyContent: "space-evenly" }}>
+                <Box>
                   <Typography
                     color="white"
                     variant="subtitle1"
                     sx={{
-                      color: 'white',
+                      color: "white",
                       fontSize: 10,
                       fontFamily: ["Roboto", "sans-serif"].join(","),
                     }}
@@ -376,21 +389,20 @@ const Login = (props: any) => {
                     color="white"
                     variant="subtitle1"
                     sx={{
-                      color: 'white',
+                      color: "white",
                       fontSize: 10,
                       fontFamily: ["Roboto", "sans-serif"].join(","),
                     }}
                   >
-                    Ass. Maintenance Eng.,  Md. Faridul Islam
+                    Ass. Maintenance Eng., Md. Faridul Islam
                   </Typography>
-
                 </Box>
-                <Box >
+                <Box>
                   <Typography
                     color="white"
                     variant="subtitle1"
                     sx={{
-                      color: 'white',
+                      color: "white",
                       fontSize: 10,
                       fontFamily: ["Roboto", "sans-serif"].join(","),
                     }}
@@ -408,7 +420,6 @@ const Login = (props: any) => {
                   >
                     Programmer, Md Rokan uddin
                   </Typography> */}
-
                 </Box>
               </Box>
             </Grid>

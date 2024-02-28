@@ -172,7 +172,7 @@ const PatientHomeScreen = () => {
             </Box>
             <Box sx={{ display: "flex", alignItems: "center", pl: 2, pb: 1 }}>
               <Button
-                sx={{ ...fontFamily, fontSize: 12,backgroundColor:"white" }}
+                sx={{ ...fontFamily, fontSize: 12}}
                 variant="contained"
                
               >

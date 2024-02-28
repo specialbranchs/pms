@@ -302,6 +302,19 @@ const Login = (props: any) => {
               <Link href="#" variant="body2" sx={{ marginLeft: 2 }}>
                 <NavLink to={"/register"}>Sign Up</NavLink>
               </Link>
+              <Link
+                  href="https://play.google.com/store/apps/details?id=com.com.sb.pms&hl=en&gl=US"
+                  underline="none"
+                  target="_blank"
+                  variant="body2"
+                  marginLeft={5}
+                  border={'1px solid red'}
+                  color={'red'}
+                  padding={'2px'}
+                  borderRadius={"3px"}
+                >
+                  use App
+                </Link>
             </Toolbar>
           </form>
         </Grid>
